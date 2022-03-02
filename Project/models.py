@@ -2,8 +2,8 @@ from Project import db
 
 class Students(db.Model):
     pk = db.Column(db.Integer, primary_key = True)
-    first_name = db.Column(db.String(100))
-    surname = db.Column(db.String(100))
+    first_name = db.Column(db.String(255))
+    surname = db.Column(db.String(255))
     house_num= db.Column(db.Integer)
     postcode = db.Column(db.String(8)) 
     stu_enroll = db.relationship('Enrollment', backref = 'students')
@@ -19,8 +19,8 @@ class Enrollment(db.Model):
 
 class Classes(db.Model):
     pk = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(100))
-    desc = db.Column(db.String(500))
+    name = db.Column(db.String(255))
+    desc = db.Column(db.String(255))
     class_enroll = db.relationship('Enrollment', backref = 'classes')
     def __str__(self):
         return f"{self.name}:\n{self.desc}"

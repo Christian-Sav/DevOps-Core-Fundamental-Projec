@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+        <h2>Home</h2>
+        {% if num == 0 and num_class == 0 %} 
+        <p> You currently have either no students and no classes</p>
+        {% else %} 
+        <p> You have {{num}} Student(s)! and {{num_class}} Class(es)! </p>
+        {% endif %}
+        {% for stud in studs %}
+        {{ stud.__str__() + " " + stud.project.__str__() }}  <a href="{{ url_for ('update_stud', pk=stud.pk) }}">Update Item</a>
+        {% endfor %}
+        <br>
+{% endblock body %}
