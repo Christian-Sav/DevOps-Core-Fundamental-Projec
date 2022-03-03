@@ -2,12 +2,23 @@
 {% block body %}
         <h2>Home</h2>
         {% if num == 0 and num_class == 0 %} 
-        <p> You currently have either no students and no classes</p>
+        <p> You currently have no students and no classes</p>
         {% else %} 
-        <p> You have {{num}} Student(s)! and {{num_class}} Class(es)! </p>
+        <p> You have {{num}} Student(s)! and {{num_class}} Class(es)! and {{num_enroll}} student(s) enrolled in class(es) </p>
         {% endif %}
+        <h3> Enrollments </h3>
+        {% for enroll in enrolls %}
+        <br> {{ enroll.__str__() + " " + enroll.project.__str__() }}  <a href="{{ url_for ('update_enroll', pk=enroll.pk) }}">Update Enrollment </a> || <a href="{{ url_for ('del_enroll', pk=enroll.pk) }}">Delete Enrollment</a>
+        {% endfor %}
+        <br>
+        <h3> Students </h3>
         {% for stud in studs %}
-        {{ stud.__str__() + " " + stud.project.__str__() }}  <a href="{{ url_for ('update_stud', pk=stud.pk) }}">Update Item</a>
+        <br> {{ stud.__str__() + " " + stud.project.__str__() }}  <a href="{{ url_for ('update_stud', pk=stud.pk) }}">Update Student</a> || <a href="{{ url_for ('del_stud', pk=stud.pk) }}">Delete Student</a>
+        {% endfor %}
+        <br>
+        <h3> Classes </h3>
+        {% for class_ in classes_ %}
+        <br> {{ class_.__str__() + " " + class_.project.__str__() }}  <a href="{{ url_for ('update_class_', pk=class_.pk) }}">Update Class</a> || <a href="{{ url_for ('del_class', pk=class_.pk) }}">Delete Class</a>
         {% endfor %}
         <br>
 {% endblock body %}

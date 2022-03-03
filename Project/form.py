@@ -18,3 +18,9 @@ class AddEnrollment(FlaskForm):
     fk_student = SelectField("Student Name", choices=[] , validators = [DataRequired()])
     fk_class = SelectField("Class to enroll", choices=[] , validators = [DataRequired()])
     submit = SubmitField ("Add Item")
+
+
+class DelClass(FlaskForm):
+    name = StringField("Class to Delete",validators = [DataRequired()])
+    desc = StringField("Description of class",validators = [DataRequired()])
+    submit = SubmitField ("Add Item")
