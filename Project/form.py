@@ -4,17 +4,17 @@ from wtforms import StringField, SelectField, SubmitField, IntegerField
 from wtforms.validators import DataRequired, ValidationError
 from Project.models import Classes
 
-class NameCheck():
-    def __init__(self, message = "Class already exists"):
-        self.message = message
+# class NameCheck():
+#     def __init__(self, message = "Class already exists"):
+#         self.message = message
     
-    def __call__(self, form, field):
-        if field.data in [classes.name for classes in Classes.query.get(name)]:
-            raise(ValidationError(self.message))
+#     def __call__(self, form, field):
+#         if field.data in [classes.name for classes in Classes.query.get(name)]:
+#             raise(ValidationError(self.message))
 
 
 class AddStud(FlaskForm):
-    first_name = StringField("Student first Name", validators = [DataRequired()])
+    first_name = StringField("Student First Name", validators = [DataRequired()])
     surname = StringField("Student Surname",validators = [DataRequired()])
     house_num = IntegerField("Student Home Number", validators = [DataRequired()])
     postcode = StringField("Student Postcode", validators = [DataRequired()])

@@ -11,11 +11,6 @@ def home():
     classes_ = Classes.query.all()
     return render_template('index.html' , num = num_studs, studs = studs, num_class = num_class, classes_ = classes_)
 
-@app.route('/search=<keyword>')
-def search(keyword):
-    data = [str(result) for result in db.session.execute(f"SELECT * FROM todo WHERE desc LIKE '%{keyword}%'")]
-    return render_template('searches.html', data = data)
-
 @app.route('/enrollment')
 def enrollment_page():
     num_enroll = Enrollment.query.count()
