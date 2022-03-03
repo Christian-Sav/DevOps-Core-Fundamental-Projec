@@ -4,14 +4,8 @@
         {% if num == 0 and num_class == 0 %} 
         <p> You currently have no students and no classes</p>
         {% else %} 
-        <p> You have {{num}} Student(s)! and {{num_class}} Class(es)! and {{num_enroll}} student(s) enrolled in class(es) </p>
+        <p> You have {{num}} Student(s)! and {{num_class}} Class(es)!</p>
         {% endif %}
-        <h3> Enrollments </h3>
-        {% for enroll in enrolls %}
-        <br> {{ enroll.students.first_name + " " + enroll.students.surname + " is studying " + enroll.classes.name }}  <a href="{{ url_for ('update_enroll', pk=enroll.pk) }}">Update Enrollment </a> || <a href="{{ url_for ('del_enroll', pk=enroll.pk) }}">Delete Enrollment</a>
-        {% endfor %}
-        <br>
-        <br>
         <h3> Students </h3>
         {% for stud in studs %}
         <br> {{ stud.__str__() + " " + stud.project.__str__() }}  <a href="{{ url_for ('update_stud', pk=stud.pk) }}">Update Student</a> || <a href="{{ url_for ('del_stud', pk=stud.pk) }}">Delete Student</a>

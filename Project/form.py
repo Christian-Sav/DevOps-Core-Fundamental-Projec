@@ -1,6 +1,17 @@
+from unicodedata import name
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, SubmitField, IntegerField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, ValidationError
+from Project.models import Classes
+
+class NameCheck():
+    def __init__(self, message = "Class already exists"):
+        self.message = message
+    
+    def __call__(self, form, field):
+        if field.data in [classes.name for classes in Classes.query.get(name)]:
+            raise(ValidationError(self.message))
+
 
 class AddStud(FlaskForm):
     first_name = StringField("Student first Name", validators = [DataRequired()])

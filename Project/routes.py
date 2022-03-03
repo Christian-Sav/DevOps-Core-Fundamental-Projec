@@ -5,18 +5,22 @@ from Project.models import Enrollment, Students, Classes
 
 @app.route('/')
 def home():
-    num_enroll = Enrollment.query.count()
-    enrolls = Enrollment.query.all()
     num_studs = Students.query.count()
     studs = Students.query.all()
     num_class = Classes.query.count()
     classes_ = Classes.query.all()
-    return render_template('index.html' , num = num_studs, studs = studs, num_class = num_class, classes_ = classes_,  num_enroll = num_enroll, enrolls = enrolls)
+    return render_template('index.html' , num = num_studs, studs = studs, num_class = num_class, classes_ = classes_)
 
 @app.route('/search=<keyword>')
 def search(keyword):
     data = [str(result) for result in db.session.execute(f"SELECT * FROM todo WHERE desc LIKE '%{keyword}%'")]
     return render_template('searches.html', data = data)
+
+@app.route('/enrollment')
+def enrollment_page():
+    num_enroll = Enrollment.query.count()
+    enrolls = Enrollment.query.all()
+    return render_template('enrollment.html', num_enroll = num_enroll, enrolls = enrolls)
 
 @app.route('/create-student', methods = ['GET', 'POST'])
 def create_stud():
@@ -34,15 +38,25 @@ def create_stud():
 
 @app.route('/create-class', methods = ['GET', 'POST'])
 def create_class():
+    message = None
     form = AddClass()
     if request.method == 'POST' :
+        # if not form.validate_on_submit():
+        #     message = ""
+        #     for field in ['name']:
+        #         try:
+        #             err = eval(f"form.{field}.errors[-1]")
+        #         except IndexError:
+        #             err = ""
+        #         message += err + ", "
+        #     return render_template('add_class.html', form = form,  message = message, ptitle = "Add New Class")
         name = form.name.data
         desc = form.desc.data
         new_class = Classes(name = name, desc = desc)
         db.session.add(new_class)
         db.session.commit()
         return redirect(url_for('home'))
-    return render_template('add_class.html', form = form, ptitle = "Add New Class")
+    return render_template('add_class.html', form = form, message = message, ptitle = "Add New Class")
 
 @app.route('/create-enroll', methods = ['GET', 'POST'])
 def create_enroll():
@@ -121,3 +135,5 @@ def del_enroll(pk):
     db.session.delete(enroll)
     db.session.commit()
     return redirect(url_for('home'))
+
+ 

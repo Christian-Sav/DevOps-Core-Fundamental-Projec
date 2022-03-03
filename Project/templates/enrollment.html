@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+        <h2>Enrollments</h2>
+        {% if num_enroll == 0 %} 
+        <p> You currently have no students in no classes</p>
+        {% else %} 
+        <p> You have {{num_enroll}} student(s) enrolled in class(es) </p>
+        {% endif %}
+        <br>
+        {% for enroll in enrolls %}
+        <br> {{ enroll.students.first_name + " " + enroll.students.surname + " is studying " + enroll.classes.name }}  <a href="{{ url_for ('update_enroll', pk=enroll.pk) }}">Update Enrollment </a> || <a href="{{ url_for ('del_enroll', pk=enroll.pk) }}">Delete Enrollment</a>
+        {% endfor %}
+        <br>
+{% endblock body %}
