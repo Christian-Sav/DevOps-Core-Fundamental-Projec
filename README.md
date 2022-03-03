@@ -19,4 +19,12 @@ For my app I have chosen to build a school enrollment app that allows the user t
 ![ERD](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/ERD%20Version%201.png)
 
 ## CI Pipeline: 
+As well as the requirements outlined already, the project aslso required the implementation of multiple stages of a typical CI pipeline. We were required to include project tracking, version contol, development enviroment and a build server. 
 
+For project tracking I used a scrum based project tracker on Jira, on this items were assigned story points, their criteria for acceptance and MoSCoW prioritisiation, they were then moved from project backlog to sprint backlog to in progress and eventually to done as the project was progressed. The board at the beginning of sprint one looked like this:
+
+![jiraboard]
+
+For version control I used git with the project repository being hosted on github, using git for Version control allows for easy access to the commit history for access to earlier versions whilst changes are being made and committed to the project. GitHub as a repository hosting service allows the repository to be stored away from the development environment, as well as providing webhooks, which send http POST requests to the build server to automate building and testing.
+
+A python3 virtual enviroment or venv was used as the development enviroment which was hosted on google cloud platform virtual machine running Ubuntu 20.04. I used python as Flask is a python-based framework. I used a venv as it allows pip installs to be used and for the app to be run without conflicting with any existing installs on the host machine. 
