@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block body %}
+<h2> {{ptitle}} </h2>
+<br>
+<div class = "form">
+<form method = "POST" action = "">
+      {{ form.hidden_tag() }}
+      <br>
+      {{form.first_name.label}} || {{form.first_name}}
+      <br>
+      {{form.surname.label}} || {{form.surname}}
+      <br>
+      {{form.house_num.label}} {{form.house_num}}
+      <br>
+      {{form.postcode.label}} {{form.postcode}}
+      <br>
+      {{form.submit}}
+</form>
+{% if message %}
+{{ message }}
+{% endif %}
+</div>
+{% endblock body %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block body %}
+<h2> {{ptitle}} </h2>
+<br>
+<div class = "form">
+<form method = "POST" action = "">
+      {{ form.hidden_tag() }}
+      <br>
+      {{form.fk_student.label}} {{form.fk_student}}
+      <br>
+      {{form.fk_class.label}} {{form.fk_class}}
+      <br>
+      {{form.submit}}
+</form>
+{% if message %}
+{{ message }}
+{% endif %}
+</div>
+{% endblock body %}
