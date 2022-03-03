@@ -1,5 +1,5 @@
 # DevOps Core Fundamental Project - School Enrollment App
-Within this repository are mt deliverables for the DevOps Core Fundamentals project.
+Within this repository are my deliverables for the DevOps Core Fundamentals project.
 
 ## Contents:
 * [Project Brief](#Project-Brief)  
