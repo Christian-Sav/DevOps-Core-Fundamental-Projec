@@ -36,15 +36,15 @@ def create_class():
     message = None
     form = AddClass()
     if request.method == 'POST' :
-        # if not form.validate_on_submit():
-        #     message = ""
-        #     for field in ['name']:
-        #         try:
-        #             err = eval(f"form.{field}.errors[-1]")
-        #         except IndexError:
-        #             err = ""
-        #         message += err + ", "
-        #     return render_template('add_class.html', form = form,  message = message, ptitle = "Add New Class")
+        if not form.validate_on_submit():
+            message = ""
+            for field in ['name']:
+                try:
+                    err = eval(f"form.{field}.errors[-1]")
+                except IndexError:
+                    err = ""
+                message += err + ", "
+            return render_template('add_class.html', form = form,  message = message, ptitle = "Add New Class")
         name = form.name.data
         desc = form.desc.data
         new_class = Classes(name = name, desc = desc)
