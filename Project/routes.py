@@ -1,6 +1,6 @@
 from flask import redirect, url_for, render_template, request
 from Project import app, db
-from Project.form import AddClass, AddStud, AddEnrollment, DelClass
+from Project.form import AddClass, AddStud, AddEnrollment
 from Project.models import Enrollment, Students, Classes
 
 @app.route('/')
@@ -103,35 +103,21 @@ def update_enroll(pk):
 @app.route('/delete_stud/<int:pk>',  methods = ['GET', 'POST'])
 def del_stud(pk):
     stud = Students.query.get(pk)
-    form = AddStud()
-    if request.method == 'POST' :
-        db.session.delete(stud)
-        db.session.commit()
-        return redirect(url_for('home'))
-    return render_template('add_stud.html', form = form, stud = stud,  ptitle = "Delete Student")
+    db.session.delete(stud)
+    db.session.commit()
+    return redirect(url_for('home'))
 
 @app.route('/delete_class/<int:pk>',  methods = ['GET', 'POST'])
 def del_class(pk):
     class_ = Classes.query.get(pk)
-    form = AddClass()
-    if request.method == 'POST' :
-        db.session.delete(class_)
-        db.session.commit()
-        return redirect(url_for('home'))
-    return render_template('add_class.html', form = form, class_ = class_,  ptitle = "Delete Class")
+    db.session.delete(class_)
+    db.session.commit()
+    return redirect(url_for('home'))
+  
 
 @app.route('/delete_enroll/<int:pk>',  methods = ['GET', 'POST'])
 def del_enroll(pk):
     enroll = Enrollment.query.get(pk)
-    students = Students.query.all()
-    classes = Classes.query.all()
-    form = AddEnrollment()
-    form.fk_student.choices.extend([( student.pk, student.first_name + " " + student.surname) for student in students])
-    form.fk_class.choices.extend([( class_.pk, class_.name) for class_ in classes])
-    if request.method == 'POST' :
-        enroll.fk_student = int(form.fk_student.data)
-        enroll.fk_class = int(form.fk_class.data)
-        db.session.delete(enroll)
-        db.session.commit()
-        return redirect(url_for('home'))
-    return render_template('add_enrollment.html', form = form, enroll = enroll,  ptitle = "Delete Enrollment")
+    db.session.delete(enroll)
+    db.session.commit()
+    return redirect(url_for('home'))

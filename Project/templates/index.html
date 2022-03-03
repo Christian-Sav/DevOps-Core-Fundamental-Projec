@@ -8,13 +8,15 @@
         {% endif %}
         <h3> Enrollments </h3>
         {% for enroll in enrolls %}
-        <br> {{ enroll.__str__() + " " + enroll.project.__str__() }}  <a href="{{ url_for ('update_enroll', pk=enroll.pk) }}">Update Enrollment </a> || <a href="{{ url_for ('del_enroll', pk=enroll.pk) }}">Delete Enrollment</a>
+        <br> {{ enroll.students.first_name + " " + enroll.students.surname + " is studying " + enroll.classes.name }}  <a href="{{ url_for ('update_enroll', pk=enroll.pk) }}">Update Enrollment </a> || <a href="{{ url_for ('del_enroll', pk=enroll.pk) }}">Delete Enrollment</a>
         {% endfor %}
+        <br>
         <br>
         <h3> Students </h3>
         {% for stud in studs %}
         <br> {{ stud.__str__() + " " + stud.project.__str__() }}  <a href="{{ url_for ('update_stud', pk=stud.pk) }}">Update Student</a> || <a href="{{ url_for ('del_stud', pk=stud.pk) }}">Delete Student</a>
         {% endfor %}
+        <br>
         <br>
         <h3> Classes </h3>
         {% for class_ in classes_ %}
