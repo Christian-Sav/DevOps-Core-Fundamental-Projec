@@ -28,3 +28,9 @@ For project tracking I used a scrum based project tracker on Jira, on this items
 For version control I used git with the project repository being hosted on github, using git for Version control allows for easy access to the commit history for access to earlier versions whilst changes are being made and committed to the project. GitHub as a repository hosting service allows the repository to be stored away from the development environment, as well as providing webhooks, which send http POST requests to the build server to automate building and testing.
 
 A python3 virtual enviroment or venv was used as the development enviroment which was hosted on google cloud platform virtual machine running Ubuntu 20.04. I used python as Flask is a python-based framework. I used a venv as it allows pip installs to be used and for the app to be run without conflicting with any existing installs on the host machine. 
+
+Jenkins was used as the build server, providing automation of building and testing. The automation is achieved by setting up a freestyle project which executes the test.sh script when it recieves a webhook from github upon pushing a commit to the dev branch. The full pipeline utilised for this porject is:
+
+![CI Pipeline](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/CI%20Pipeline.png)
+
+##Risk Assessment
