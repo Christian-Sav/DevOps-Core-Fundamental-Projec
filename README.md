@@ -29,7 +29,7 @@ For version control I used git with the project repository being hosted on githu
 
 A python3 virtual enviroment or venv was used as the development enviroment which was hosted on google cloud platform virtual machine running Ubuntu 20.04. I used python as Flask is a python-based framework. I used a venv as it allows pip installs to be used and for the app to be run without conflicting with any existing installs on the host machine. 
 
-Jenkins was used as the build server, providing automation of building and testing. The automation is achieved by setting up a freestyle project which executes the test.sh script when it recieves a webhook from github upon pushing a commit to the dev branch. The full pipeline utilised for this porject is:
+Jenkins was used as the build server, providing automation of building and testing. The automation is achieved by setting up a freestyle project which executes the test.sh script when it recieves a webhook from github upon pushing a commit to the dev branch. The full CI pipeline for this project is:
 
 ![CI Pipeline](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/CI%20Pipeline.png)
 
