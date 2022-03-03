@@ -43,7 +43,7 @@ def create_class():
                     err = eval(f"form.{field}.errors[-1]")
                 except IndexError:
                     err = ""
-                message += err + ", "
+                message += err + ""
             return render_template('add_class.html', form = form,  message = message, ptitle = "Add New Class")
         name = form.name.data
         desc = form.desc.data
