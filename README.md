@@ -18,3 +18,5 @@ For my app I have chosen to build a school enrollment app that allows the user t
 
 ![ERD](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/ERD%20Version%201.png)
 
+## CI Pipeline: 
+
