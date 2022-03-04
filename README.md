@@ -45,7 +45,7 @@ Before even starting the build of the app, risk assessment was taken to identify
 ![RiskAssessment](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/Risk%20Assessment.png)
  
 
-##Testing:  
+## Testing:  
 Testing the app was an essential part of the development process.
 
 As this is not a production app, tests such as security tests and performance tests were not part of the scope of this project; only testing for functionality was performed. These tests are automated using Jenkins via webhooks whenever I commit to the Dev branch.Below is a  successful build, in which all tests passed:  
