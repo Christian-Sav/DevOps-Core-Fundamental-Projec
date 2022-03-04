@@ -9,7 +9,7 @@ Within this repository are my deliverables for the DevOps Core Fundamentals proj
 * [Testing](#Testing)
 * [The App](#The-App)
 * [Updates](#Updates)
-* [Current Issues](#Current Issues)
+* [Current Issues](#Current-Issues)
 
 ## Project Brief:  
 In the brief provided, we were required to design and produce a web app using. The web app needed to use CRUD functionality (CREATE, READ, UPDATE, DELETE), needed to be bults using the Flask micro-framework and had to be able of storing information in a database using MYSQL consisting of atleast 2 tables sharing a one to many relationship.
@@ -34,7 +34,7 @@ Jenkins was used as the build server, providing automation of building and testi
 
 ![CI Pipeline](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/CI%20Pipeline.png)
 
-##Risk Assessment
+## Risk Assessment
 Before even starting the build of the app, risk assessment was taken to identify risks and to propose measures that can be used in order to control them. These measures could then be implemented into the app. The inital risk assessment is shown here: 
 
 ![RiskAssessment](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/Risk%20Assessment.png)
@@ -59,7 +59,7 @@ As well as this I have included the functionality of outputing a coverage report
 
 This is a 97% overall coverage on tests. To be classed as a sucessful build all tests included MUST pass, even a single failed test would result in the build being classed as a failure.
 
-##The App:
+## The App:
 
 When first navigating to the app you will be greated with the home screen which shows you your current students and your current classes with the functionality to update or delete them:
  ![Home](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/Home%20Page.png)
@@ -86,10 +86,10 @@ The view enrollments page allows you to see your current enrollments with the fu
 
 The Updates page re-uses the add page with a dynamic title changed by using the update link.
  
- ##Updates:
+ ## Updates:
  * 04/03/2022
      * Background slightly changed to rgb(219, 245, 241) a more relaxing baby blue
  
- ##Current Issues:
+ ## Current Issues:
 * Currently the same enrollment can be added twice, allowing for the same student in  the same class more than once.
 * Other than having a different address a student with the same name would be indistinguishable from another on the enrollments page
