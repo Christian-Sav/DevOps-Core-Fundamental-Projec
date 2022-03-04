@@ -9,6 +9,7 @@ Within this repository are my deliverables for the DevOps Core Fundamentals proj
 * [Testing](#Testing)
 * [The App](#The-App)
 * [Updates](#Updates)
+* [Current Issues](#Current Issues)
 
 ## Project Brief:  
 In the brief provided, we were required to design and produce a web app using. The web app needed to use CRUD functionality (CREATE, READ, UPDATE, DELETE), needed to be bults using the Flask micro-framework and had to be able of storing information in a database using MYSQL consisting of atleast 2 tables sharing a one to many relationship.
@@ -43,9 +44,52 @@ Some of the control measures implemented in the project as a result of the risk 
 * SQLAlchemy was used with Flask to prevent SQL commands being sent directly to the database.  
 * Any credentials have been stored as secret texts on my Jenkins VM and exported as environment variables to avoid accidentally publishing confidential details. 
 
-## Testing:  
+##Testing:  
 Testing the app was an essential part of the development process. Two types of testing were implemented:  
 * Unit testing tests _units of functionality_ (i.e functions) within the app. Unit tests were written for create, read, update and delete functionality, to ensure that these worked as intended.
 * Integration testing tests the function of the app in an as-live environment, being able to simulate keyboard input and mouse clicks to ensure that these elements of the app function as intended. Integration tests were written for many of the forms employed in the app.  
 
-As this is not a production app, tests such as security tests and performance tests were not part of the scope of this project; only testing for functionality was performed. As mentioned previously, these tests are automated using Jenkins via webhooks. A successful build, in which all tests passed, is shown below:  
+As this is not a production app, tests such as security tests and performance tests were not part of the scope of this project; only testing for functionality was performed. These tests are automated using Jenkins via webhooks whenever I commit to the Dev branch.Below is a  successful build, in which all tests passed:  
+
+![Build](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/Build%20tests%20pass.png)
+
+As well as this I have included the functionality of outputing a coverage report as a HTML file to be archived as an artifact after the build is completed, for the above build this is the corresponding coverage report:
+
+![Coverage](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/CI%20Coverage.png)
+
+This is a 97% overall coverage on tests. To be classed as a sucessful build all tests included MUST pass, even a single failed test would result in the build being classed as a failure.
+
+##The App:
+
+When first navigating to the app you will be greated with the home screen which shows you your current students and your current classes with the functionality to update or delete them:
+ ![Home](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/Home%20Page.png)
+ 
+ Using the navigation bar you can select to either add students, classes or enrollments and view your currenrt enrollments and are then taken to the respective pages :
+ 
+ ![ADDSTUD](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/Add%20Student.png)
+ 
+ The user adds the student by filling out the respective form with the students first and surname, house number and postcode.
+ 
+ ![ADDCLASS](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/Add%20Class.png)
+ 
+ Similar to the student page classes are added by filling out the form with the class name and description.
+ 
+ ![ADDENROLL](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/Add%20Enrollment.png)
+ 
+ However unlike the other pages the Enrollment page is filled using a drop down list consisting of all of the availiable students and classes.
+ 
+ ![ViewEnroll](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/View%20Enrollments.png)
+ 
+The view enrollments page allows you to see your current enrollments with the functionality to update or delete them.
+
+![Updates](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/Update.png)
+
+The Updates page re-uses the add page with a dynamic title changed by using the update link.
+ 
+ ##Updates:
+ * 04/03/2022
+     * Background slightly changed to rgb(219, 245, 241) a more relaxing baby blue
+ 
+ ##Current Issues:
+* Currently the same enrollment can be added twice, allowing for the same student in  the same class more than once.
+* Other than having a different address a student with the same name would be indistinguishable from another on the enrollments page
