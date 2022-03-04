@@ -85,7 +85,7 @@ class TestAddClass(TestBase):
             follow_redirects = True
         )
         self.assert200(response)
-        self.assertIn(b'Sample Class 2', response.data)   
+        self.assertIn(b'Sample Class 2', response.data)
 
 class TestUpdateClass(TestBase):
     def test_create_get(self):
@@ -154,3 +154,13 @@ class TestDeleteEnroll(TestBase):
         response = self.client.get(url_for('del_enroll', pk=1), follow_redirects = True)
         self.assert200(response)
         self.assertNotIn(b'Student Name', response.data)
+
+class TestValClass(TestBase):
+    def test_create_post(self):
+        response = self.client.post(
+            url_for('create_class'),
+            data = dict(name = "Sample Class", desc = "A sample class"),
+            follow_redirects = True
+        )
+        self.assert200(response)
+        self.assertIn(b'Class already exists', response.data)
