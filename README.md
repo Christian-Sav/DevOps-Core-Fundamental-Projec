@@ -24,7 +24,7 @@ As well as the requirements outlined already, the project aslso required the imp
 
 For project tracking I used a scrum based project tracker on Jira, on this items were assigned story points, their criteria for acceptance and MoSCoW prioritisiation, they were then moved from project backlog to sprint backlog to in progress and eventually to done as the project was progressed. The board at the beginning of sprint one looked like this:
 
-![jiraboard]
+![jiraboard](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/sprint.png)
 
 For version control I used git with the project repository being hosted on github, using git for Version control allows for easy access to the commit history for access to earlier versions whilst changes are being made and committed to the project. GitHub as a repository hosting service allows the repository to be stored away from the development environment, as well as providing webhooks, which send http POST requests to the build server to automate building and testing.
 
