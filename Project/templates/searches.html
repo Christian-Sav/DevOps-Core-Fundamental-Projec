@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+        <h2> Results </h2>
+        {% if data == [] %} 
+        <p> There is nothing matching </p>
+        {% else %} 
+        <p> Here are your results </p>
+        {% for result in data %}
+        {{ result }}
+        <br>
+        {% endfor %}
+        {% endif %}
+        <br>
+{% endblock body %}
