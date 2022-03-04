@@ -10,6 +10,7 @@ Within this repository are my deliverables for the DevOps Core Fundamentals proj
 * [The App](#The-App)
 * [Updates](#Updates)
 * [Current Issues](#Current-Issues)
+* [Future-Plans](#Future-Plans)
 
 ## Project Brief:  
 In the brief provided, we were required to design and produce a web app using. The web app needed to use CRUD functionality (CREATE, READ, UPDATE, DELETE), needed to be bults using the Flask micro-framework and had to be able of storing information in a database using MYSQL consisting of atleast 2 tables sharing a one to many relationship.
