@@ -40,7 +40,7 @@ Jenkins was used as the build server which provided automation of both building 
 ![CI Pipeline](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/CI%20Pipeline.png)
 
 ## Risk Assessment
-Before even starting the build of the app, risk assessment was taken to identify risks and to propose control measures that can be used in order to reduce them. These measures could then be implemented into the app or advised to users. The inital risk assessment is shown here: 
+Before even starting the build of the app, risk assessment was taken to identify risks and to propose control measures that can be used in order to reduce them. These measures could then be implemented into the app or advised to users. The initial risk assessment is shown here: 
 
 ![RiskAssessment](https://github.com/Christian-Sav/QA_Project/blob/feature/Figures/Risk%20Assessment.png)
  
