@@ -88,6 +88,7 @@ The Updates page re-uses the add page with a dynamic title changed by using the 
  ## Updates:
  * 04/03/2022
      * Background slightly changed to rgb(219, 245, 241) a more relaxing baby blue.
+     * As well improved readability and functionality of enrollments
  
  ## Current Issues:
 * Currently the same enrollment can be added twice, allowing for the same student in  the same class more than once.
