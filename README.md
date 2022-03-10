@@ -13,7 +13,7 @@ Within this repository are my deliverables for the DevOps Core Fundamentals proj
 * [Future-Plans](#Future-Plans)
 
 ## Project Brief:  
-In the brief provided, we were required to design and produce a web app using. The web app needed to use CRUD functionality (CREATE, READ, UPDATE, DELETE), needed to be bults using the Flask micro-framework and had to be able of storing information in a database using MYSQL consisting of atleast 2 tables sharing a one to many relationship.
+In the brief provided, we were required to design and produce a web app. The web app needed to use CRUD functionality (CREATE, READ, UPDATE, DELETE), needed to be bults using the Flask micro-framework and had to be able of storing information in a database using MYSQL consisting of atleast 2 tables sharing a one to many relationship.
 
 ## App Design:
 For my app I have chosen to build a school enrollment app that allows the user to add students, classes and enrollments (adhearing to the CREATE functionality), view the students, classes and enrollments (adhearing to the READ functionality), update the students, classes and enrollments (adhearing to the UPDATE functionality) and delete students, classes and enrollments (adhearing to the DELETE functionality). The database for this project comprises of a Students table, a Classes table and an Enrollments table, with the Enrollments table being the join table (or child table) between Students and Classes assossiating one student with multiple enrollments and multiple classes with multiple enrollments (two one-to-many relationships). The ERD for this is shown below:
