@@ -6,3 +6,4 @@ flask-wtf
 pytest
 flask-testing
 pytest-cov
+gunicorn
