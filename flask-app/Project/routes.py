@@ -45,9 +45,9 @@ def create_class():
                     err = ""
                 message += err + ""
             return render_template('add_class.html', form = form,  message = message, ptitle = "Add New Class")
-        name = form.name.data
-        desc = form.desc.data
-        new_class = Classes(name = name, desc = desc)
+        c_name = form.name.data
+        c_desc = form.desc.data
+        new_class = Classes(c_name = c_name, c_desc = c_desc)
         db.session.add(new_class)
         db.session.commit()
         return redirect(url_for('home'))
@@ -59,7 +59,7 @@ def create_enroll():
     classes_ = Classes.query.all()
     form = AddEnrollment()
     form.fk_student.choices.extend([( student.pk, student.first_name + " " + student.surname) for student in students])
-    form.fk_class.choices.extend([( class_.pk, class_.name) for class_ in classes_])
+    form.fk_class.choices.extend([( class_.pk, class_.c_name) for class_ in classes_])
     if request.method == 'POST' :
         fk_student = int(form.fk_student.data)
         fk_class = int(form.fk_class.data)
@@ -87,8 +87,8 @@ def update_class_(pk):
     class_ = Classes.query.get(pk)
     form = AddClass()
     if request.method == 'POST' :
-        class_.name = form.name.data
-        class_.desc = form.desc.data
+        class_.c_name = form.name.data
+        class_.c_desc = form.desc.data
         db.session.commit()
         return redirect(url_for('home'))
     return render_template('add_class.html', form = form, ptitle = "Update Class") 
@@ -100,7 +100,7 @@ def update_enroll(pk):
     classes = Classes.query.all()
     form = AddEnrollment()
     form.fk_student.choices.extend([( student.pk, student.first_name + " " + student.surname) for student in students])
-    form.fk_class.choices.extend([( class_.pk, class_.name) for class_ in classes])
+    form.fk_class.choices.extend([( class_.pk, class_.c_name) for class_ in classes])
     if request.method == 'POST' :
         enroll.fk_student = int(form.fk_student.data)
         enroll.fk_class = int(form.fk_class.data)

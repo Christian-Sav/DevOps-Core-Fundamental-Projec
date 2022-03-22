@@ -6,4 +6,5 @@ flask-wtf
 pytest
 flask-testing
 pytest-cov
-gunicorn
+gunicorn==20.1.0
+markupsafe==2.0.1

@@ -18,7 +18,7 @@ class TestBase(TestCase):
     def setUp(self): # Run before each test
         db.create_all()
         sample_stud = Students(first_name = "John", surname = "Doe", house_num = 72, postcode = "SW1A 1AA")
-        sample_class = Classes(name = "Sample Class", desc = "A sample class")
+        sample_class = Classes(c_name = "Sample Class", c_desc = "A sample class")
         sample_enroll = Enrollment(fk_student = 1, fk_class = 1)
 
         db.session.add(sample_stud)
