@@ -19,8 +19,8 @@ class Enrollment(db.Model):
 
 class Classes(db.Model):
     pk = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(255))
-    desc = db.Column(db.String(255))
+    c_name = db.Column(db.String(255))
+    c_desc = db.Column(db.String(255))
     class_enroll = db.relationship('Enrollment', backref = 'classes')
     def __str__(self):
-        return f"{self.name}:\n{self.desc}"
+        return f"{self.c_name}:\n{self.c_desc}"
