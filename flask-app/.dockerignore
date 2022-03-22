@@ -1,0 +1,7 @@
+*.sh
+*.md
+.gitignore
+Figures
+tests
+*.drawio
+proj_create.py
