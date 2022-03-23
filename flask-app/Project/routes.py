@@ -38,7 +38,7 @@ def create_class():
     if request.method == 'POST' :
         if not form.validate_on_submit():
             message = ""
-            for field in ['name']:
+            for field in ['c_name']:
                 try:
                     err = eval(f"form.{field}.errors[-1]")
                 except IndexError:
