@@ -8,7 +8,7 @@ pipeline {
             }
         }
     } 
-    psst {
+    post {
         always {
             archiveArtifacts artifacts: "flask-app/htmlcov/*"
         }
