@@ -3,8 +3,9 @@ pipeline {
     stages{
         stage('test') {
             steps {
-                dir('flask-app')
+                dir('flask-app') {
                     sh "bash test.sh"
+                }
             }
         }
     } 
