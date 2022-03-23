@@ -9,7 +9,7 @@ pipeline {
             }
         }
         stage('build and push') {
-            envirmont {
+            environment {
                 DOCKER_CREDS = credentials('docker-creds')
             }
             sh "docker-compose build --parallel"
