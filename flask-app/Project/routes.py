@@ -45,8 +45,8 @@ def create_class():
                     err = ""
                 message += err + ""
             return render_template('add_class.html', form = form,  message = message, ptitle = "Add New Class")
-        c_name = form.name.data
-        c_desc = form.desc.data
+        c_name = form.c_name.data
+        c_desc = form.c_desc.data
         new_class = Classes(c_name = c_name, c_desc = c_desc)
         db.session.add(new_class)
         db.session.commit()
@@ -87,8 +87,8 @@ def update_class_(pk):
     class_ = Classes.query.get(pk)
     form = AddClass()
     if request.method == 'POST' :
-        class_.c_name = form.name.data
-        class_.c_desc = form.desc.data
+        class_.c_name = form.c_name.data
+        class_.c_desc = form.c_desc.data
         db.session.commit()
         return redirect(url_for('home'))
     return render_template('add_class.html', form = form, ptitle = "Update Class") 
