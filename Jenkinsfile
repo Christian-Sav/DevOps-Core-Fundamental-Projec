@@ -3,13 +3,14 @@ pipeline {
     stages{
         stage('test') {
             steps {
-                sh "bash flask-app/test.sh"
+                dir('flask-app')
+                    sh "bash test.sh"
             }
         }
     } 
     psst {
         always {
-            archiveArtifacts artifacts: "htmlcov/*"
+            archiveArtifacts artifacts: "flask-app/htmlcov/*"
         }
     }
 }
