@@ -8,7 +8,7 @@ class NameCheck():
         self.message = message
     
     def __call__(self, form, field):
-        if field.data in [classes.name for classes in Classes.query.all()]:
+        if field.data in [classes.c_name for classes in Classes.query.all()]:
             raise(ValidationError(self.message))
 
 
@@ -20,8 +20,8 @@ class AddStud(FlaskForm):
     submit = SubmitField ("Add Item")
 
 class AddClass(FlaskForm):
-    name = StringField("Class Name",validators = [DataRequired(), NameCheck()])
-    desc = StringField("Class Description",validators = [DataRequired()])
+    c_name = StringField("Class Name",validators = [DataRequired(), NameCheck()])
+    c_desc = StringField("Class Description",validators = [DataRequired()])
     submit = SubmitField ("Add Item")
 
 class AddEnrollment(FlaskForm):
