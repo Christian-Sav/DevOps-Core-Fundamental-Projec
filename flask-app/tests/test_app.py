@@ -81,7 +81,7 @@ class TestAddClass(TestBase):
     def test_create_post(self):
         response = self.client.post(
             url_for('create_class'),
-            data = dict(name = "Sample Class 2", desc = "A Second sample class"),
+            data = dict(c_name = "Sample Class 2", c_desc = "A Second sample class"),
             follow_redirects = True
         )
         self.assert200(response)
@@ -96,7 +96,7 @@ class TestUpdateClass(TestBase):
     def test_create_post(self):
         response = self.client.post(
             url_for('update_class_', pk=1),
-            data = dict(name = "Sample Class 3", desc = "A Second Third class"),
+            data = dict(c_name = "Sample Class 3", c_desc = "A Second Third class"),
             follow_redirects = True
         )
         self.assert200(response)
@@ -159,7 +159,7 @@ class TestValClass(TestBase):
     def test_create_post(self):
         response = self.client.post(
             url_for('create_class'),
-            data = dict(name = "Sample Class", desc = "A sample class"),
+            data = dict(c_name = "Sample Class", c_desc = "A sample class"),
             follow_redirects = True
         )
         self.assert200(response)
