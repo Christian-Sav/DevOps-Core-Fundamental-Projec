@@ -8,7 +8,7 @@
         {% endif %}
         <br>
         {% for enroll in enrolls %}
-        <br> {{ enroll.students.first_name + " " + enroll.students.surname + " is studying " + enroll.classes.name }} || <a href="{{ url_for ('update_enroll', pk=enroll.pk) }}">Update Enrollment </a> || <a href="{{ url_for ('del_enroll', pk=enroll.pk) }}">Delete Enrollment</a>
+        <br> {{ enroll.students.first_name + " " + enroll.students.surname + " is studying " + enroll.classes.c_name }} || <a href="{{ url_for ('update_enroll', pk=enroll.pk) }}">Update Enrollment </a> || <a href="{{ url_for ('del_enroll', pk=enroll.pk) }}">Delete Enrollment</a>
         {% endfor %}
         <br>
 {% endblock body %}
